@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Admin Dashboard</h2>
+
+<a href="/add-driver">Add Driver</a>
+
+<table>
+<tr>
+    <th>Driver</th>
+    <th>Date</th>
+    <th>Status</th>
+    <th>Note</th>
+</tr>
+
+{% for row in data %}
+<tr>
+    <td>{{ row[0] }}</td>
+    <td>{{ row[1] }}</td>
+    <td>{{ row[2] }}</td>
+    <td>{{ row[3] or "" }}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+{% endblock %}
